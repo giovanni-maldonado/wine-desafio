@@ -1,4 +1,4 @@
-/** @type {import('next').NextConfig} */
-module.exports = {
-  reactStrictMode: true,
-}
+import withImages from 'next-images'
+module.exports = withImages({
+  esModule: true
+})
