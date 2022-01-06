@@ -37,6 +37,7 @@ export const ProductListStyle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 15px;
   }
 
   .price {
@@ -44,15 +45,15 @@ export const ProductListStyle = styled.div`
     text-decoration: line-through;
     color: ${props => props.theme.colors.lightGray};
   }
-  
-    .price-and-discount {
-      display: flex;
-      flex-direction: row;
-      max-width: 100px;
-      text-align: center;
-      white-space: nowrap;
-      align-items: center;
-    }
+
+  .price-and-discount {
+    display: flex;
+    flex-direction: row;
+    max-width: 100px;
+    text-align: center;
+    white-space: nowrap;
+    align-items: center;
+  }
 
   .discount {
     color: #fff;

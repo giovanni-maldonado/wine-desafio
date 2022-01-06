@@ -16,14 +16,12 @@ const AddCardButton: React.FC<Props> = (Props) => {
   }
 
   return (
-    <div>
-      <button
-        className="add-to-cart"
-        onClick={() => addToCart(Props.id)}
-      >
-        ADICIONAR
-      </button>
-    </div>
+    <button
+      className="add-to-cart"
+      onClick={() => addToCart(Props.id)}
+    >
+      ADICIONAR
+    </button>
   )
 }
 
