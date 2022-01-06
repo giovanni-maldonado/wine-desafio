@@ -29,4 +29,9 @@ export const HeaderStyle = styled.header`
     font-size: 18px;
     line-height: 24px;
   }
+
+  button {
+    border: none;
+    background: none;
+  }
 `

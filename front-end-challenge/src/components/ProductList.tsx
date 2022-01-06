@@ -21,6 +21,7 @@ const ProductList: React.FC = () => {
 
   useEffect(() => {
     apiRequest()
+    localStorage.setItem('cartProduct', JSON.stringify([]))
   }, [])
 
   return (

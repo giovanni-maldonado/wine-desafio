@@ -13,7 +13,11 @@ const AddCardButton: React.FC<Props> = (Props) => {
 
   const addToCart = (id: number) => {
     const product = products.find((item: Iitems) => item.id === id)
-    localStorage.setItem('productInCart', JSON.stringify(product))
+    const cartProduct = JSON.parse(localStorage.getItem('cartProduct') as string)
+    if (cartProduct) {
+      const newCartProduct = [...cartProduct, product]
+      localStorage.setItem('cartProduct', JSON.stringify(newCartProduct))
+    }
   }
 
   return (
