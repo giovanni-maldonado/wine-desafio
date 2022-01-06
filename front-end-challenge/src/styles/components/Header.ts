@@ -3,11 +3,8 @@ import styled from 'styled-components'
 export const HeaderStyle = styled.header`
   width: 100vw;
   height: 80px;
-  display flex;
+  display: flex;
   left: 0%;
-  top: 1.14%;
-  bottom: -1.14%;
-  position: absolute;
   background: #fff;
   justify-content: space-around;
   align-items: center;
