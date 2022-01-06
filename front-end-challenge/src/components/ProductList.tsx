@@ -1,49 +1,32 @@
-import React, { useCallback, useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios'
+import { useDispatch } from 'react-redux'
 import { ProductListStyle } from '../styles/components/ProductList'
+import { setProducts } from '../redux/slices/productSlice'
+import { IapiResponse } from '../interfaces/interfaces'
+import ProductCard from './ProductCard'
 
 const ProductList: React.FC = () => {
+  const dispatch = useDispatch()
+
   const pageNum = 1
   const url = `https://wine-back-test.herokuapp.com/products?page=${pageNum}&limit=9`
-  const [products, setProducts] = useState([])
-
-  const getProducts = useCallback(
-    async () => {
-      await axios.get(url)
-        .then((res) => {
-          setProducts(res.data.items)
-        })
-        .catch((err) => console.log(err))
-    }, [setProducts]
-  )
+  const apiRequest = async () => {
+    await axios.get<IapiResponse>(url)
+      .then((res) => {
+        dispatch(setProducts(res.data.items))
+      })
+      .catch((err) => console.log(err))
+  }
 
   useEffect(() => {
-    getProducts()
+    apiRequest()
   }, [])
-
-  console.log(products)
 
   return (
     <ProductListStyle>
       {
-        products.map((product) => {
-          const { id, image, name, price, discount, priceMember, priceNonMember } = product
-          return (
-            <div className="product-card" key={id}>
-              <img src={image} alt={name}/>
-              <div className="product-card-info">
-                <h1>{name}</h1>
-                <div className="price-and-discount">
-                  <p className="price">{`R$ ${price}`}</p>
-                  <p className="discount">{`${discount}% OFF`}</p>
-                </div>
-                <p className="member">SÓCIO WINE <span className="real">R$</span> <span className="member-price">{priceMember}</span></p>
-                <p className="non-member">{`NÃO SÓCIO R$${priceNonMember}`}</p>
-                <button className="add-to-cart">ADICIONAR</button>
-              </div>
-            </div>
-          )
-        })
+        <ProductCard />
       }
   </ProductListStyle>
   )
