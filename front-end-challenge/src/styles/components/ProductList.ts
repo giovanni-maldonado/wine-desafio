@@ -1,20 +1,19 @@
 import styled from 'styled-components'
 
 export const ProductListStyle = styled.div`
-  width: 95vw;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  align-items: center;
   
   * {
     flex: 1 1 22%;
   }
-  
-  .product-card-img {
-    width: 200px;
+
+  .wine-img {
+    width: 150px;
+    margin-left: 25px;
   }
-  
+
   .product-card {
     background-color: #fff;
     margin: 0.5rem;
@@ -22,12 +21,6 @@ export const ProductListStyle = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 22vw;
-    height: 33vw;
-  }
-
-  img {
-    width: 150px;
   }
 
   p {
@@ -41,6 +34,9 @@ export const ProductListStyle = styled.div`
 
   .product-card-info {
     height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .price {
@@ -48,20 +44,25 @@ export const ProductListStyle = styled.div`
     text-decoration: line-through;
     color: ${props => props.theme.colors.lightGray};
   }
+  
+    .price-and-discount {
+      display: flex;
+      flex-direction: row;
+      max-width: 100px;
+      text-align: center;
+      white-space: nowrap;
+      align-items: center;
+    }
 
   .discount {
+    color: #fff;
+    background: #f79552;
     border-radius: 1.9px;
     font-size: 11px;
     line-height: 12px;
     text-align: center;
-    color: #fff;
-    background: #f79552;
-    width: 20px;
-  }
-
-  .price-and-discount {
-    display: flex;
-    flex-direction: row;;
+    padding: 0.2rem;
+    margin-left: 0.5rem;
   }
 
   .member {
@@ -90,7 +91,7 @@ export const ProductListStyle = styled.div`
     background-color: #7EBC43;
     color: #fff;
     border-style: none;
-    margin-top: 20px;
+    margin-top: 40px;
     padding: 8px;
     width: 220px;
   }
