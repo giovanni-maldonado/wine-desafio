@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { AddCartButtonStyle } from '../styles/components/AddCartButton'
 import { Iitems } from '../interfaces/interfaces'
 import { productSlice } from '../redux/slices/productSlice'
 
@@ -16,12 +17,14 @@ const AddCardButton: React.FC<Props> = (Props) => {
   }
 
   return (
-    <button
-      className="add-to-cart"
-      onClick={() => addToCart(Props.id)}
-    >
-      ADICIONAR
-    </button>
+    <AddCartButtonStyle>
+      <button
+        className="add-to-cart"
+        onClick={() => addToCart(Props.id)}
+      >
+        ADICIONAR
+      </button>
+    </AddCartButtonStyle>
   )
 }
 

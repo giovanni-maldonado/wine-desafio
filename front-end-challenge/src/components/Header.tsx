@@ -10,14 +10,14 @@ export default function Header() {
       <h1>Produtores</h1>
       <h1>Ofertas</h1>
       <h1>Eventos</h1>
-      <button>
-        <img className="header-search-icon" src="" alt="lupa de pesquisa"/>
+      <button className="header-button">
+        <img className="header-search-icon" src="https://cdn-icons-png.flaticon.com/512/482/482631.png" alt="lupa de pesquisa"/>
       </button>
-      <button>
-        <img className="header-icon" src="" alt="avatar anonimo" />
+      <button className="header-button">
+        <img className="header-icon" src="https://cdn-icons-png.flaticon.com/512/848/848043.png" alt="avatar anonimo"/>
       </button>
-      <button>
-        <img className="header-icon" src="" alt="sacola de compras"/>
+      <button className="header-button">
+        <img className="header-icon" src="https://cdn-icons-png.flaticon.com/512/743/743131.png" alt="sacola de compras"/>
       </button>
     </HeaderStyle>
   )
