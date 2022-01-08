@@ -10,8 +10,8 @@ export const HeaderStyle = styled.header`
   align-items: center;
 
   img {
-    width: 102px;
-    height: 31px;
+    width: 108px;
+    height: 34px;
   }
 
   .header-icon {

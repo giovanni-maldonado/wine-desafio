@@ -8,5 +8,6 @@ export const AddCartButtonStyle = styled.div`
     margin-top: 40px;
     padding: 8px;
     width: 220px;
+    cursor: pointer;
   }
 `
