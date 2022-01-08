@@ -1,7 +1,7 @@
 import React from 'react'
 import { HeaderStyle } from '../styles/components/Header'
 
-export default function Header() {
+const Header = () => {
   return (
     <HeaderStyle>
       <img src="https://d2duuy9yo5pldo.cloudfront.net/dashboard-resources/wine/e90faa36-9670-4bd4-a063-8818d3f9d20e.png" alt="logo da wine"/>
@@ -22,3 +22,5 @@ export default function Header() {
     </HeaderStyle>
   )
 }
+
+export default Header
