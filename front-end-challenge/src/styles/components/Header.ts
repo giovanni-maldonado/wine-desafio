@@ -24,14 +24,18 @@ export const HeaderStyle = styled.header`
     height: 50px;
     border-color: #000;
   }
-
-  h1 {
-    font-size: 18px;
-    line-height: 24px;
-  }
-
+  
   button {
     border: none;
     background: none;
+  }
+  
+  .cart-icon-button {
+    cursor: pointer;
+  }
+  
+  h1 {
+    font-size: 18px;
+    line-height: 24px;
   }
 `
