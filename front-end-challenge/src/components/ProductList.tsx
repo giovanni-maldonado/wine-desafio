@@ -5,16 +5,17 @@ import { ProductListStyle } from '../styles/components/ProductList'
 import { setProducts } from '../redux/slices/productSlice'
 import { IapiResponse } from '../interfaces/interfaces'
 import ProductCard from './ProductCard'
+import FilterByPrice from './FilterByPrice'
 
 const ProductList: React.FC = () => {
   const dispatch = useDispatch()
-
-  const pageNum = 1
-  const url = `https://wine-back-test.herokuapp.com/products?page=${pageNum}&limit=9`
+  const [foundItems, setFoundItems] = React.useState<number>(0)
+  const url = 'https://wine-back-test.herokuapp.com/products'
   const apiRequest = async () => {
     await axios.get<IapiResponse>(url)
       .then((res) => {
         dispatch(setProducts(res.data.items))
+        setFoundItems(res.data.totalItems)
       })
       .catch((err) => console.log(err))
   }
@@ -26,9 +27,8 @@ const ProductList: React.FC = () => {
 
   return (
     <ProductListStyle>
-      {
-        <ProductCard />
-      }
+      <FilterByPrice value={foundItems}/>
+      <ProductCard />
   </ProductListStyle>
   )
 }
