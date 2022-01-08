@@ -19,9 +19,11 @@ export default function ProductCard() {
   }
 
   return (
-    products.map((product: Iitems) => {
-      const { id, image, flag, name, price, discount, priceMember, priceNonMember } = product
-      return (
+    products.length === 0
+      ? <h1>Nenhum produto encontrado</h1>
+      : products.map((product: Iitems) => {
+        const { id, image, flag, name, price, discount, priceMember, priceNonMember } = product
+        return (
         <ProductCardStyle key={id}>
           <div className="product-card" key={id}>
             <div className="redirect-to-product" onClick={() => navigate(id)}>
@@ -42,7 +44,7 @@ export default function ProductCard() {
             <AddCardButton id={id} />
           </div>
         </ProductCardStyle>
-      )
-    }).slice(minDelimiter, maxDelimiter)
+        )
+      }).slice(minDelimiter, maxDelimiter)
   )
 }
