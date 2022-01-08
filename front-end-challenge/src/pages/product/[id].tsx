@@ -5,6 +5,7 @@ import { productSlice } from '../../redux/slices/productSlice'
 import { Iitems } from '../../interfaces/interfaces'
 import { ProductDetailStyle } from '../../styles/pages/productDetails/ProductDetail'
 import Header from '../../components/Header'
+import AddCardButton from '../../components/AddCartButton'
 
 const productPage = () => {
   const router = useRouter()
@@ -55,6 +56,7 @@ const productPage = () => {
               </div>
               <h2>Comentário do Sommelier</h2>
               <p className="sommelier-comment">{sommelierComment}</p>
+              <AddCardButton id={id}/>
             </div>
           </ProductDetailStyle>
         </div>
