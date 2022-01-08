@@ -13,6 +13,7 @@ export const ProductCardStyle = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
+    min-height: 415px;
   }
 
   p {
@@ -78,5 +79,9 @@ export const ProductCardStyle = styled.div`
     color: ${props => props.theme.colors.lightGray};
     font-size: 12px;
     line-height: 14px;
+  }
+
+  .redirect-to-product {
+    cursor: pointer;
   }
 `
