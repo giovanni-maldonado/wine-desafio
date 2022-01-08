@@ -29,7 +29,7 @@ const ProductList: React.FC = () => {
     <ProductListStyle>
       <FilterByPrice value={foundItems}/>
       <ProductCard />
-  </ProductListStyle>
+    </ProductListStyle>
   )
 }
 
