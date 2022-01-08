@@ -13,6 +13,7 @@ export interface Iitems {
   avaliations: number,
   country: string,
   region: string,
+  volume: string,
   flag: string,
   sommelierComment: string
 }
